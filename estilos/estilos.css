@@ -1,0 +1,290 @@
+body {
+    margin: 0px 0px;
+    padding: 0;
+    font-family: 'Indie Flower', cursive;
+}
+
+/* NAV GENERICO */
+nav {
+    display: flex;
+    flex-direction: column;
+    background-color: #3a6b39;
+    color: white;   
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+}
+
+
+.redes a:hover {
+    color: #82c024; 
+}
+
+
+.head{
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+    border-bottom: 1px solid white;
+}
+
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.redes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.redes span a{
+    color: white;
+    padding: 10px;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    width: 100%;
+    background-color: #82c024;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.menu-item:hover a {
+    color: #3a6b39; 
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+li {
+    margin-right: 0px;
+}
+
+.submenu {
+    display: none; 
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: #82c024;
+    border-top: 2px solid white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+
+
+.submenu li {
+    padding: 10px 20px;
+    text-align: center; 
+}
+
+.submenu li a {
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.submenu li:hover{   
+    background-color: #75aa26 ;
+}
+
+.menu-desplegable, .menu-mob, .menu-cierre{
+    display: none;
+}
+
+
+/* NAV GENERICO FIN */
+
+/* NAV GENERICO MOBILE */
+@media screen and (max-width: 1050px) {
+
+    /* Oculta las redes sociales en versión móvil */
+    .redes, .menu {
+        display: none;
+    }
+
+    /* Oculta el menú principal en versión móvil */
+    .menu ul {
+        display: none;
+    }
+
+    .head{
+        border-bottom: 1px solid white;
+        margin-bottom: 5px;
+    }
+
+    .menu-mob{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        cursor: pointer;
+        
+    }
+
+    .menu-desplegable {
+        display: none;
+        position: fixed;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        width: 100%;
+        height: 100%;
+        background-color: #3a6b39;
+        color: white;
+        z-index: 1000;
+        font-weight: bold;
+        letter-spacing: 0px;
+        text-transform: uppercase;
+        transform: translateY(-100%);
+        /* Inicialmente, el menú está fuera de la pantalla */
+        opacity: 0;
+        /* Inicialmente, el menú es invisible */
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .menu-desplegable ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .menu-desplegable li {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid white;
+    }
+    
+    .menu-desplegable a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .menu-cierre {
+        display: none; /* Oculto por defecto */
+        font-size: 30px;
+        cursor: pointer;
+        text-align: center;
+        padding: 10px;
+        transition: opacity 0.3s ease;
+    }
+
+        /* Estilos para el menú desplegable cuando está visible */
+    .menu-visible {
+        display: block;
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+    /* Estilos para el botón de cierre cuando el menú está visible */
+    .menu-visible .menu-cierre {
+        display: flex;
+        opacity: 1;
+    }
+
+    /* Estilos para ocultar el botón de menú cuando el menú está visible */
+    .menu-visible .menu-mob {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /* Estilos para el menú desplegable cuando está visible */
+    .menu-visible {
+        display: block;
+        transform: translateY(0);
+        opacity: 1; 
+    }
+    
+    .menu-desplegable .logo{
+        margin: 13px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .menu-item {
+        position: relative; /* Establece posición relativa en el menú principal */
+    }
+
+    .menu-item:hover a {
+        color: #82c024; 
+    }
+
+    .menu-desplegable .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        bottom: 100%;
+        left: 0;
+        background-color: #82c024;
+        border-top: 2px solid white;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        transform: translateY(-100%); /* Mueve el submenú hacia arriba */
+        opacity: 0; /* Inicialmente, el submenú es invisible */
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .menu-item.parent:hover {
+        margin-bottom: 100%; /* Ajusta el valor según sea necesario */
+    }
+    
+    .menu-item:hover .submenu {
+        transform: translateY(0); /* Muestra el submenú al desplazarlo hacia abajo */
+        opacity: 1; /* Hace visible el submenú */
+    }
+
+
+    .submenu li {
+        padding: 10px 20px;
+        text-align: center; 
+    }
+
+    .submenu li a {
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .submenu li:hover{   
+        display: none;
+    }
+
+    
+
+    
+
+}
+/* NAV GENERICO MOBILE FIN */
