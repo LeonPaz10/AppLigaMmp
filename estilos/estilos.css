@@ -19,6 +19,29 @@ body {
     font-family: 'Indie Flower', cursive;
 }
 
+
+/* Estilos para el div "spinner" */
+.spinner {
+    width: 40px;
+    height: 40px;
+    font-size: 40px; /* Tamaño del icono */
+    color: black; /* Color del icono */
+    animation: spin 1s linear infinite;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* Ocultar el spinner por defecto */
+    z-index: 999; /* Asegurarse de que esté en la parte superior */
+    border-radius: 50%; /* Añade el borde circular */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
 /* NAV GENERICO */
 nav {
     display: flex;
@@ -108,6 +131,7 @@ li {
     padding: 0;
     margin: 0;
     width: 100%;
+    z-index: 999;
 }
 
 .menu-item:hover .submenu {
@@ -137,6 +161,29 @@ li {
 
 /* NAV GENERICO FIN */
 
+
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-right: 15%;
+    margin-bottom: 0rem;
+    margin-left: 15%;
+}
+
+.carousel-indicators li {
+    list-style: none; /* Quita los marcadores de lista */
+}
+
+.carousel{
+    margin-top: 1px;
+}
+
 /* NAV GENERICO MOBILE */
 @media screen and (max-width: 1050px) {
 
@@ -150,9 +197,6 @@ li {
         display: none;
     }
 
-    body{
-        background-color: #73b972;
-    }
     .head{
         border-bottom: 1px solid white;
         margin-bottom: 5px;
@@ -178,11 +222,6 @@ li {
         background-position: center;
         background-size: 100%;
     }
-
-    /* .full-height.show {
-        height: 100vh; 
-        overflow-y: auto; 
-    } */
 
     .menu-desplegable {
         display: block;
@@ -225,7 +264,6 @@ li {
         position: absolute;
         top: 100%;
         bottom: 100%;
-        left: 0;
         background-color: #82c024;
         border-top: 2px solid white;
         list-style: none;
@@ -257,7 +295,29 @@ li {
     .submenu li:hover{   
         display: none;
     }
+
+    /* NAV GENERICO MOBILE FIN */
+
+
+    /* Estilos para el div "spinner" */
+    .spinner {
+        width: 40px;
+        height: 40px;
+        font-size: 40px; /* Tamaño del icono */
+        color: black; /* Color del icono */
+        animation: spin 1s linear infinite;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: none; /* Ocultar el spinner por defecto */
+        z-index: 999; /* Asegurarse de que esté en la parte superior */
+        border-radius: 50%; /* Añade el borde circular */
+    }
     
 
+    .carousel{
+        margin-top: 5px;
+    }
+
 }
-/* NAV GENERICO MOBILE FIN */
