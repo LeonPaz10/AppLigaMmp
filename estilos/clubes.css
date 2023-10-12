@@ -1,0 +1,72 @@
+a {
+    text-decoration: none; /* Elimina el subrayado */
+    font-weight: bold; /* Hace el texto más audaz */
+}
+
+.contenedorClubes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Asegura que ocupe al menos el 100% de la altura de la ventana */
+    background-color: white;
+    width: 90%;
+    margin: 150px auto auto auto; /* Centra horizontalmente */
+    padding: 50px;
+} 
+
+.tituloClubes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tituloClubes h1{
+    text-transform: uppercase;
+}
+
+.tituloClubes p{
+    text-align: center;
+}
+
+.club-card {
+    text-align: center;
+    margin: 15px;
+}
+
+.club-image {
+    position: relative;
+}
+
+.club-image img {
+    width: 100%; /* Establece un ancho del 100% para que la imagen llene su contenedor */
+    height: 300px; /* Establece una altura fija para todas las imágenes de estadios */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+.club-shield {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.club-shield img {
+    width: 50px; /* Tamaño del escudo */
+    height: auto;
+}
+
+.club-name {
+    background-color: #82c024;
+    padding: 8px 0;
+    border-radius: 8px;
+    margin-top: 10px;
+    text-decoration: transparent;
+    color: black;
+}
+
